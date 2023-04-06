@@ -28,7 +28,7 @@ python main.py
 
 You should be able to see the inference result printed out in the Browser upon successful verification.
 
-
+![demo.png](https://raw.githubusercontent.com/hekaiyou/easyocr-server/main/examples/demo.png)
 
 ## Using EasyOCR Server with Docker
 
