@@ -1,6 +1,34 @@
 # easyocr-server
 
-EasyOCR Server
+EasyOCR Server is a python module for extracting text from image. It is a general OCR that can read both natural scene text and dense text in document. are currently supporting 80+ languages and expanding.
+
+## Installation Steps
+
+**Step 0.** Download and install [easyocr-server](https://github.com/hekaiyou/easyocr-server) from the GitHub.
+
+```shell
+git clone https://github.com/hekaiyou/easyocr-server.git
+```
+
+**Step 1.** Install [easyocr](https://pypi.org/project/easyocr/), [bottle](https://pypi.org/project/bottle/) and [gevent](https://pypi.org/project/gevent/) using PyPI.
+
+```shell
+cd easyocr-server
+pip install -r requirements.txt
+```
+
+## Verify the installation
+
+```shell
+python main.py
+```
+
+- **Browser**: http://localhost:8080/ocr/
+- **CMD**: `curl http://localhost:8080/ocr/ -F "language=en" -F "img_file=@examples/english.png"`
+
+You should be able to see the inference result printed out in the Browser upon successful verification.
+
+
 
 ## Using EasyOCR Server with Docker
 
