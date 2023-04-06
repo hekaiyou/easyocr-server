@@ -44,8 +44,53 @@ def curtain_get():
         <input type="file" id="imgFile" placeholder="image file: jpg, png, tiff only" />
         <p><b>Step 2: </b>Enter Language Codes</p>
         <select id="language" value="en">
-            <option value="en">English</option>
+            <option value="abq">Abaza</option>
+            <option value="ady">Adyghe</option>
+            <option value="af">Afrikaans</option>
+            <option value="ang">Angika</option>
+            <option value="ar">Arabic</option>
+            <option value="as">Assamese</option>
+            <option value="ava">Avar</option>
+            <option value="az">Azerbaijani</option>
+            <option value="be">Belarusian</option>
+            <option value="bg">Bulgarian</option>
+            <option value="bh">Bihari</option>
+            <option value="bho">Bhojpuri</option>
+            <option value="bn">Bengali</option>
+            <option value="bs">Bosnian</option>
             <option value="ch_sim">Simplified Chinese</option>
+            <option value="ch_tra">Traditional Chinese</option>
+            <option value="che">Chechen</option>
+            <option value="cs">Czech</option>
+            <option value="cy">Welsh</option>
+            <option value="da">Danish</option>
+            <option value="dar">Dargwa</option>
+            <option value="de">German</option>
+            <option value="en">English</option>
+            <option value="es">Spanish</option>
+            <option value="et">Estonian</option>
+            <option value="fa">Persian (Farsi)</option>
+            <option value="fr">French</option>
+            <option value="ga">Irish</option>
+            <option value="gom">Goan Konkani</option>
+            <option value="hi">Hindi</option>
+            <option value="hr">Croatian</option>
+            <option value="hu">Hungarian</option>
+            <option value="id">Indonesian</option>
+            <option value="inh">Ingush</option>
+            <option value="is">Icelandic</option>
+            <option value="it">Italian</option>
+            <option value="ja">Japanese</option>
+            <option value="kbd">Kabardian</option>
+            <option value="kn">Kannada</option>
+            <option value="ko">Korean</option>
+            <option value="ku">Kurdish</option>
+            <option value="la">Latin</option>
+            <option value="lbe">Lak</option>
+            <option value="lez">Lezghian</option>
+            <option value="lt">Lithuanian</option>
+            <option value="lv">Latvian</option>
+            <option value="mah">Magahi</option>
         </select>
         <p><b>Step 3: </b>Identify image</p>
         <button id="proxySubmit">Process</button>
