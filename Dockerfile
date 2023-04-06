@@ -30,3 +30,8 @@ RUN mkdir "$service_home" \
 RUN cd "$service_home" \
     && python setup.py build_ext --inplace -j 4 \
     && python -m pip install -e .
+
+COPY . /workspace/
+RUN pip install -r requirements.txt
+EXPOSE 8080/tcp
+CMD ["python", "main.py"]

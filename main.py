@@ -15,8 +15,7 @@ def ocr_post():
     img_upload_filename = f'upload/{"".join(str(time()).split("."))}'
     upload_file.save(img_upload_filename, overwrite=True)
     print(f'启动 {img_upload_filename} OCR 进程')
-    p = Popen(
-        ['./venv/Scripts/python', './ocr.py', img_upload_filename, language])
+    p = Popen(['python', './ocr.py', img_upload_filename, language])
     while not os.path.exists(f'{img_upload_filename}.json'):
         sleep(1)
     print(f'完成 {img_upload_filename} OCR 进程')
@@ -50,6 +49,8 @@ def curtain_get():
         </select>
         <p><b>Step 3: </b>Identify image</p>
         <button id="proxySubmit">Process</button>
+        <p><b>Step 4: </b>Check OCR results</p>
+        <textarea id="results" rows="20" cols="60"></textarea>
         <script type="text/javascript">
             $(function () {
                 $('#proxySubmit').on('click', function(e) {
@@ -69,12 +70,18 @@ def curtain_get():
                         processData:false,  //不对FormData中的数据进行url编码, 而是将FormData数据原样上传到服务器
                         cache: false,
                         data: formData,
+                        beforeSend: function() {
+                            $('#proxySubmit').attr('disabled', true);
+                        },
                         success: (res) => {
-                            console.log(res);
+                            $("#results").val(JSON.stringify(res, null, 4));
                         },
                         error: function(err) {
-                            console.log(err);
-                        }
+                            $("#results").val(err);
+                        },
+                        complete: function() {
+                            $('#proxySubmit').removeAttr('disabled');
+                        },
                     })
                 });
             });
@@ -87,4 +94,4 @@ def curtain_get():
 if __name__ == '__main__':
     # Browser: http://localhost:8080/ocr/
     # CMD: curl http://localhost:8080/ocr/ -F "language=en" -F "img_file=@examples/english.png"
-    run(host='0.0.0.0', port=8080, debug=True, server='gevent')
+    run(host='0.0.0.0', port=8080, debug=False, server='gevent')
