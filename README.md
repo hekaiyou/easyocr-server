@@ -1,0 +1,2 @@
+# easyocr-server
+EasyOCR Server
